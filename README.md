@@ -23,7 +23,7 @@ This was repetitive, multi-step, and error-prone — a single mismatched column 
 
 The workflow was split into **two independent automated stages**, connected through a shared handoff folder:
 
-<img src="assets/flow-repair.png" alt="Flow diagram: Stage 1 Data Extraction (RPA) automatically sets filter conditions on the internal repair system web page and exports Excel, then auto-archives the file and hands it off through a shared folder to Stage 2 Processing and Notification (Python), which reads the latest exported file, applies rule-based classification, auto-fills the quote template, saves the file with failure fallback, and generates an Outlook draft pending review." width="420">
+<img src="assets/flow-repair.png" alt="Flow diagram: Stage 1 Data Extraction (RPA) automatically sets filter conditions on the internal repair system web page and exports Excel, then auto-archives the file and hands it off through a shared folder to Stage 2 Processing and Notification (Python), which reads the latest exported file, applies rule-based classification, auto-fills the quote template, saves the file with failure fallback, and generates an Outlook draft pending review." width="760">
 
 **Why split it into two stages?** The two stages are fully independent. If the web export fails, the previous data can still be processed; if the processing stage fails, there's no need to re-export — this makes the system much easier to debug.
 
